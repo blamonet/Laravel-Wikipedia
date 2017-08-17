@@ -31,7 +31,6 @@ class Wikipedia {
 	public function getSentences($sentences)
 	{
 		$this->queryBuilder->setExtractsSentences($sentences);
-
 		return $this->getResponseExtract( $this->queryBuilder->fetch() );
 	}
 
@@ -43,7 +42,6 @@ class Wikipedia {
 	public function getChars($chars)
 	{
 		$this->queryBuilder->setExtractsChars($chars);
-
 		return $this->getResponseExtract( $this->queryBuilder->fetch() );
 	}
 
@@ -56,11 +54,8 @@ class Wikipedia {
 	protected function getResponseExtract($serializedResponse)
 	{
 		$response = unserialize( $serializedResponse );
-
 		$page = reset( $response["query"]["pages"] );
-
 		if ( ! isset($page["extract"])) return null;
-
 		return $page["extract"];
 	}
 
