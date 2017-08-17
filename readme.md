@@ -38,3 +38,7 @@ $page = reset( $response["query"]["pages"] );
 
 return $page["extract"];
 ```
+
+```php
+$wikipedia->setLocale("fr"); // setting for French
+```

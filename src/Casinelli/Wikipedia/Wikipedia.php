@@ -16,10 +16,9 @@ class Wikipedia {
 	 * @param  string $search Entry name
 	 * @return \Casinelli\Wikipedia\Wikipedia Return itself
 	 */
-	public function search($search)
+    public function search($search)
 	{
 		$this->queryBuilder->setTitles($search);
-
 		return $this;
 	}
 
@@ -43,7 +42,7 @@ class Wikipedia {
 	{
 		$this->queryBuilder->setExtractsChars($chars);
 		return $this->getResponseExtract( $this->queryBuilder->fetch() );
-	}
+    }
 
 	/**
 	 * Return the extract part of the response, if there is one.
@@ -59,4 +58,13 @@ class Wikipedia {
 		return $page["extract"];
 	}
 
+    /**
+     * Returns sets locale for wikipedia api
+     * @param string (i.e. en, fr, etc)
+     * @return string API URL
+     */
+    public function setLocale($locale) {
+        $this->queryBuilder->setApi("http://$locale.wikipedia.org/w/api.php");
+        return "http://$locale.wikipedia.org/w/api.php";
+    }
 }
