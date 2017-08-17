@@ -7,8 +7,14 @@ Begin by installing this package through Composer.
 ```js
 {
     "require": {
-        "casinelli/wikipedia": "dev-master"
-    }
+        "blamonet/wikipedia": "dev-master"
+    },
+    "repositories": [
+        {
+            "url": "https://github.com/blamonet/Laravel-Wikipedia.git",
+            "type": "git"
+        }
+    ]
 }
 ```
 
@@ -39,6 +45,7 @@ $page = reset( $response["query"]["pages"] );
 return $page["extract"];
 ```
 
+**Set Locale**
 ```php
 $wikipedia->setLocale("fr"); // setting for French
 ```
