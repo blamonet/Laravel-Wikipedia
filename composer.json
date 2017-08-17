@@ -1,10 +1,15 @@
 {
-    "name": "casinelli/wikipedia",
-    "description": "Laravel package to query Wikipedia",
+    "name": "blamonet/wikipedia",
+    "description": "Laravel package to query Wikipedia fork of casinelli/wikipedia",
     "authors": [
         {
             "name": "Casinelli",
             "email": "giovanni.casinelli@gmail.com"
+        },
+        {
+            "name": "Aaron Grant",
+            "email": "aaron.grant@gmail.com",
+            "homepage": "http://twitter.com/blamonet"
         }
     ],
     "require": {
