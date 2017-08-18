@@ -58,6 +58,9 @@ class Wikipedia {
 		return $page["extract"];
 	}
 
+    public function getArticle() {
+		return $this->getResponseExtract( $this->queryBuilder->fetch() );
+    }
     /**
      * Returns sets locale for wikipedia api
      * @param string (i.e. en, fr, etc)

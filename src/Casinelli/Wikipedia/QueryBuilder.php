@@ -10,7 +10,8 @@ class QueryBuilder {
 	 */
 	protected $queryPrivate = [
 		'action' => 'query',
-		'prop'   => 'extracts',
+        'prop'   => 'extracts',
+        'exintro' => '',
 	];
 
 	/**
@@ -18,8 +19,8 @@ class QueryBuilder {
 	 * to produce differen results
 	 * @var array
 	 */
-	protected $query = [
-		'exchars'     => null,		// No less than 1
+    protected $query = [
+        'exchars'     => null,		// No less than 1
 		'exsentences' => null,	// Between 1 and 10
 		'exlimit'     => 1,			// Max 20
 		'redirects'   => 1,			// Follow redirects eg between synonyms
@@ -59,7 +60,7 @@ class QueryBuilder {
 
 	public function fetch()
 	{
-		return file_get_contents( $this->getQueryUrl() );
+        return file_get_contents( $this->getQueryUrl() );
 	}
 
 	/**
